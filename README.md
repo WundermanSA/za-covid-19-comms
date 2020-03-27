@@ -21,6 +21,7 @@ This script provides a quick and simple way for South African website owners to 
 ## Quick start
 
 //TODO: Add implementation info here
+Add `<script src="https://za-covid-19-comms.s3-eu-west-1.amazonaws.com/release/hello.js"></script>` in the `<head>` of your HTML
 
 ## Known issues
 
