@@ -1,0 +1,20 @@
+{
+  "name": "za-covid-19-comms",
+  "version": "1.0.0",
+  "description": "WTSA Covid 10 message for .co.za websites",
+  "main": "src/index.js",
+  "repository": "https://github.com/WundermanSA/za-covid-19-comms.git",
+  "author": "WTSA",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
+}
