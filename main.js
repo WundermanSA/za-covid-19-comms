@@ -5,52 +5,52 @@
  */
 const WTSA = (function () {
 
-	var scope;
-	var settings;
+    var scope;
+    var settings;
 
     /**
      * Initializes the app
      * @param {object} config - settings to customize the behaviour
      * @returns void
      */
-	function init(config) {
+    function init(config) {
 
-		settings = config;
-		scope = document.querySelector(settings.element);
+        settings = config;
+        scope = document.querySelector(settings.element);
 
-		assemble();
+        assemble();
 
-	}
+    }
 
     /**
      * Creates the markup to be injected
      * @returns void
      */
-	function assemble() {
+    function assemble() {
 
-		var message = '<div id="covid19"><h1>Covid 19 Message</h1><p>Visit <a href="www.sacoronavirus.co.za" target="_bank">sa corona virus</a></p></div>';
+        var message = '<div id="covid19"><h1>Covid 19 Message</h1><p>Visit <a href="www.sacoronavirus.co.za" target="_bank">sa corona virus</a></p></div>';
 
-		inject(message);
+        inject(message);
 
-	}
+    }
 
     /**
      * Injects the element into the destination specified. Either adds or replaces
      * @param {HTMLElement} destination 
      */
-	function inject(destination) {
+    function inject(destination) {
 
-		settings.takeOver ? scope.innerHTML = destination : scope.html += destination;
+        settings.takeOver ? scope.innerHTML = destination : scope.html += destination;
 
-	}
+    }
 
-	return {
-		covid19: init
-	}
+    return {
+        covid19: init
+    }
 
 })();
 
 WTSA.covid19({
-	element: '.covid-19',
-	takeOver: true
+    element: '.covid-19',
+    takeOver: true
 });
