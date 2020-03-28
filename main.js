@@ -1,19 +1,18 @@
 
+/**
+ * Wunderman Thompson South Africa Namespace
+ * @returns {Object} - Props and Methods
+ */
 const WTSA = (function () {
 
 	var scope;
 	var settings;
 
-	/*
-	   config = {
-		 element: '',
-		 primaryColor: '',
-		 secondaryColor: ''
-		 takeOver: true
-	   }
-	   
-	 */
-
+    /**
+     * Initializes the app
+     * @param {object} config - settings to customize the behaviour
+     * @returns void
+     */
 	function init(config) {
 
 		settings = config;
@@ -23,6 +22,10 @@ const WTSA = (function () {
 
 	}
 
+    /**
+     * Creates the markup to be injected
+     * @returns void
+     */
 	function assemble() {
 
 		var message = '<div id="covid19"><h1>Covid 19 Message</h1><p>Visit <a href="www.sacoronavirus.co.za" target="_bank">sa corona virus</a></p></div>';
@@ -31,9 +34,13 @@ const WTSA = (function () {
 
 	}
 
-	function inject(element) {
+    /**
+     * Injects the element into the destination specified. Either adds or replaces
+     * @param {HTMLElement} destination 
+     */
+	function inject(destination) {
 
-		settings.takeOver ? scope.innerHTML = element : scope.html += element;
+		settings.takeOver ? scope.innerHTML = destination : scope.html += destination;
 
 	}
 
@@ -47,3 +54,5 @@ WTSA.covid19({
 	element: '.covid-19',
 	takeOver: true
 });
+
+WTSA

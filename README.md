@@ -31,6 +31,15 @@ Please send us any issues so that we can fix them
 
 //TODO: Add any additional documentation here
 
+```javascript
+    config = {
+        element: '',
+        primaryColor: '',
+        secondaryColor: ''
+        takeOver: true
+    }
+```
+
 ## Contributing
 
 Any pull requests or suggestions are welcome :)
