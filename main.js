@@ -54,5 +54,3 @@ WTSA.covid19({
 	element: '.covid-19',
 	takeOver: true
 });
-
-WTSA
