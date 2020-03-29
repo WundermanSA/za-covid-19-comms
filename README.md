@@ -20,8 +20,9 @@ This script provides a quick and simple way for South African website owners to 
 
 ## Quick start
 
-//TODO: Add implementation info here
 Add `<script src="https://za-covid-19-comms.s3-eu-west-1.amazonaws.com/src/index.js"></script>` in the `<head>` of your HTML
+Add `<div class='covid-19'></div>` where ever you want the message to be displayed.
+Add `<script type="text/javascript">WTSA.covid19({});</script>` before the closing `</body>` of your HTML
 
 ## Known issues
 
@@ -32,7 +33,7 @@ Please send us any issues so that we can fix them
 Initialise the script using all defaults.
 
 ```javascript
-    WTSA.covid19({});
+    WTSA.covid19();
 ```
 Initialise the script overriding defaults.
 ```javascript

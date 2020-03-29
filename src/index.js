@@ -22,7 +22,7 @@ const WTSA = (() => {
      */
     function init(config) {
         
-        settings = config;
+        settings = config || {};
 
         element = settings.element || '.covid-19';     
         takeOver = settings.takeOver || true;
