@@ -21,7 +21,7 @@ This script provides a quick and simple way for South African website owners to 
 ## Quick start
 
 //TODO: Add implementation info here
-Add `<script src="https://za-covid-19-comms.s3-eu-west-1.amazonaws.com/release/hello.js"></script>` in the `<head>` of your HTML
+Add `<script src="https://za-covid-19-comms.s3-eu-west-1.amazonaws.com/src/index.js"></script>` in the `<head>` of your HTML
 
 ## Known issues
 
@@ -29,15 +29,25 @@ Please send us any issues so that we can fix them
 
 ## Documentation
 
-//TODO: Add any additional documentation here
+Initialise the script using all defaults.
 
 ```javascript
-    config = {
-        element: '',
-        primaryColor: '',
-        secondaryColor: ''
-        takeOver: true
-    }
+    WTSA.covid19({});
+```
+Initialise the script overriding defaults.
+```javascript
+    WTSA.covid19({
+        element: '.covid-19', //Element to inject into. default: '.covid-19'
+        takeOver: true, // Append or replace (take over) inner html. default: true.
+        useDefaultCss: false, //Use default css styles. default: true.
+        messageTitle: 'IMPORTANT NOTICE!!', //Title to display. default: IMPORTANT NOTICE.
+        messageBody: 'Stay up to date with the latest and online resources on COVID-19', //Message to display. default: 'Stay up to date with the latest and online resources on COVID-19.'
+        anchorTitle: 'Learn more', //Anchor title. default: 'Learn more'
+        parentStyle: 'border-style:solid;border-width:1px;bordercolor:black;', //Parent style to override. default: null
+        titleStyle: 'font-weight:bold;', //Title style to override. default: null
+        messageStyle: '', //Message style to override. default: null
+        anchorStyle: '' //Anchor style to override. default: null
+    });
 ```
 
 ## Contributing
