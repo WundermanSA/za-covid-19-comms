@@ -107,16 +107,3 @@ const WTSA = (() => {
     }
 
 })();
-
-WTSA.covid19({
-    element: '.covid-19', //Element to inject into. default: '.covid-19'
-    takeOver: true, // Append or replace (take over) inner html. default: true.
-    useDefaultCss: false, //Use default css styles. default: true.
-    messageTitle: 'IMPORTANT NOTICE!!', //Title to display. default: IMPORTANT NOTICE.
-    messageBody: 'Stay up to date with the latest and online resources on COVID-19', //Message to display. default: 'Stay up to date with the latest and online resources on COVID-19.'
-    anchorTitle: 'Learn more', //Anchor title. default: 'Learn more'
-    parentStyle: 'border-style:solid;border-width:1px;bordercolor:black;', //Parent style to override. default: null
-    titleStyle: 'font-weight:bold;', //Title style to override. default: null
-    messageStyle: '', //Message style to override. default: null
-    anchorStyle: '' //Anchor style to override. default: null
-});
