@@ -8,21 +8,36 @@ const WTSA = (() => {
     let scope;
     let settings;
 
+    let messageTitle;
+    let messageBody;
+    let anchorTitle;
+    let takeOver;
+    let useDefaultCss;
+    let element;
+
     /**
      * Initializes the app
      * @param {object} config - settings to customize the behaviour
      * @returns void
      */
     function init(config) {
-
+        
         settings = config;
-        scope = document.querySelector(settings.element);
 
-        convid19Test();
+        element = settings.element || '.covid-19';     
+        takeOver = settings.takeOver || true;
+        useDefaultCss = settings.useDefaultCss || true;
+        messageTitle = settings.messageTitle || 'IMPORTANT NOTICE';
+        messageBody = settings.messageBody || 'Stay up to date with the latest and online resources on COVID-19.';
+        anchorTitle = settings.anchorTitle || 'Learn more';
+        
+        scope = document.querySelector(element);
+
+        covid19Test();
 
     }
 
-    function convid19Test() {
+    function covid19Test() {
 
         const positive = document.getElementById('covid19');
 
@@ -38,29 +53,42 @@ const WTSA = (() => {
      */
     function assemble() {
 
-        var message = `
+        var messageHtml = `
             <div id="covid19"
-                class="wtsa-convid-19">
+                class="wtsa-covid-19" style="${settings.parentStyle}">
 
-                <h1 class="wtsa-convid-19__title">
-                    ${settings.title}
-                </h1>
+                <p class="wtsa-covid-19__title" style="${settings.titleStyle}">
+                    ${messageTitle}
+                </p>
 
-                <p class="wtsa-convid-19__message">
+                <p class="wtsa-covid-19__message" style="${settings.messageStyle}">
 
-                    ${settings.message}
+                    ${messageBody}
 
-                    <a class="wtsa-convid-19__link"
-                        href="www.sacoronavirus.co.za"
-                        target="_bank">
-                        sa corona virus
+                    <a class="wtsa-covid-19__link"
+                        href="https://www.sacoronavirus.co.za"
+                        target="_blank" style="${settings.anchorStyle}">
+                        ${anchorTitle}
                     </a>
 
                 </p>
 
             </div>`;
 
-        infect(message);
+        var css = `<style type='text/css'>
+        .wtsa-covid-19{
+
+        }
+        .wtsa-covid-19__title{
+            float:left;
+            padding-right:10px;
+        };
+        
+        </style>`;
+
+        if(useDefaultCss) messageHtml += css;
+
+        infect(messageHtml);
 
     }
 
@@ -70,7 +98,7 @@ const WTSA = (() => {
      */
     function infect(destination) {
 
-        settings.takeOver ? scope.innerHTML = destination : scope.html += destination;
+        takeOver ? scope.innerHTML = destination : scope.html += destination;
 
     }
 
@@ -81,8 +109,11 @@ const WTSA = (() => {
 })();
 
 WTSA.covid19({
-    element: '.covid-19',
-    takeOver: true,
-    title: 'Covid 19 Title',
-    message: 'Covid 19 Message'
+    // element: '.covid-19',
+    // takeOver: true,
+    // useDefaultCss: false,
+    // messageTitle: 'IMPORTANT NOTICE!!',
+    // messageBody: 'Stay up to date with the latest and online resources on COVID-19!!',
+    // anchorTitle: 'Learn more!!',
+    // parentStyle: 'border-style:solid;border-width:1px;bordercolor:black;'
 });
